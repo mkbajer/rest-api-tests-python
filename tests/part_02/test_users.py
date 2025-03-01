@@ -1,7 +1,7 @@
 from pytest_steps import test_steps
 from jsonschema import validate
 
-#import helpers.part_02.helper as helper
+import helpers.part_02.helper as helper
 import services.part_02.users as users
 
 @test_steps('test_get_user_request')
