@@ -4,6 +4,13 @@ run-name: Rest API Python Tests
 on:
   schedule:
     - cron: '*/2 * * * *'
+  workflow_dispatch:
+    inputs:
+      run-name:
+        description: 'Py ver'
+        required: true
+        default: '3.13.2'
+        
   push:
     branches:
       - main
@@ -21,7 +28,7 @@ jobs:
       - name: Set up Python 3.13.2
         uses: actions/setup-python@v3
         with:
-          python-version: 3.13.2
+          python-version: ${{github.event.inputs.python.version}}
           
       - name: Run Tests
         run: |
