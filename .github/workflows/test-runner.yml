@@ -2,8 +2,13 @@ name: Python Tests
 run-name: Rest API Python Tests
 
 on:
+  schedule:
+    - cron: '*/2 * * * *'
   push:
-  
+    branches:
+      - main
+
+
 jobs:
   Run-Tests:
     runs-on: ubuntu-latest
